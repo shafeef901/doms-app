@@ -5,13 +5,14 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div style="height: 100%;margin:auto;text-align: center;padding-top: 20%;" (click)="toggleBut()" >
+      <div [class]="classVariable" tappable style="border-radius: 50%;margin:auto;height: 250px;width:250px;border: 5px solid #808080;display: inline-block;">
+        <ion-icon class="slide-in-both-ways" *ngIf="this.toggle" name="md-lock" style="font-size:120px;position: relative; top: 50%;padding-top: 10%;"></ion-icon>
+        <ion-icon class="slide-in-both-ways" *ngIf="!this.toggle" name="md-unlock" style="font-size:120px;position: relative; top: 50%;padding-top: 10%;"></ion-icon>      
+        
+        <p style="font-size: 40px;position: relative;bottom: 15%;color: red;" *ngIf="this.toggle">Locked</p>
+        <p style="font-size: 40px;position: relative;bottom: 15%;color: green;" *ngIf="!this.toggle">Unlocked</p>
+      </div>
+  </div>  
+  
 </ion-content>
